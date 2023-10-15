@@ -66,7 +66,7 @@ def do_deploy(archive_path):
             run("rm -f /data/web_static/current")
 
             # Create a new current symbolic link pointing to the web static location
-            run("ln -sf {} /data/web_static/current".format(web_static_location))
+            run("ln -sf {}/ /data/web_static/current".format(web_static_location))
 
             # Return true if all goes well
             return True
