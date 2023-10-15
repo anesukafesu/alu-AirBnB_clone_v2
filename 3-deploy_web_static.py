@@ -90,6 +90,7 @@ def deploy():
     do_pack and do_deploy function
     """
     path = do_pack()
+    print(path)
     if path:
         do_deploy(path)
     return False
