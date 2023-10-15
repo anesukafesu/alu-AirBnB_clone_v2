@@ -57,10 +57,12 @@ def do_deploy(archive_path):
             run("mkdir -p {}".format(web_static_location))
 
             # Decompress/Uncompress the archive inside the tmp directory
-            run('tar -xzvf {} -C {}'.format(remote_archive_location, web_static_location))
+            run('tar -xzvf {} -C {}'.format(
+                remote_archive_location, web_static_location))
 
             # Move stuff from web_static subdirectory
-            run('mv {}/web_static/* {}/'.format(web_static_location, web_static_location))
+            run('mv {}/web_static/* {}/'.format(
+                web_static_location, web_static_location))
 
             # Delete web_static subdirectory
             run('rm -rf {}/web_static'.format(web_static_location))
@@ -71,8 +73,10 @@ def do_deploy(archive_path):
             # Delete the current symbolic link
             run("rm -f /data/web_static/current")
 
-            # Create a new current symbolic link pointing to the web static location
-            run("ln -sf {}/ /data/web_static/current".format(web_static_location))
+            # Create a new current symbolic link
+            # pointing to the web static location
+            run("ln -sf {}/ /data/web_static/current".format(
+                web_static_location))
 
             # Return true if all goes well
             return True
