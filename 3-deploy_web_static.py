@@ -28,6 +28,8 @@ def do_pack():
     # Moving the archive to the versions directory
     local('mv ./{} ./versions/{}'.format(archive_name, archive_name))
 
+    return 'versions/{}'.format(archive_name)
+
 
 def do_deploy(archive_path):
     """Deploying an archive to the web server
@@ -90,7 +92,6 @@ def deploy():
     do_pack and do_deploy function
     """
     path = do_pack()
-    print(path)
     if path:
         do_deploy(path)
     return False
