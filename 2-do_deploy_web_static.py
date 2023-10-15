@@ -67,5 +67,6 @@ def do_deploy(archive_path):
 
             # Return true if all goes well
             return True
-        except:
+        except Exception as e:
+            print(e)
             return False
