@@ -59,6 +59,12 @@ def do_deploy(archive_path):
             # Decompress/Uncompress the archive inside the tmp directory
             run('tar -xzvf {} -C {}'.format(remote_archive_location, web_static_location))
 
+            # Move stuff from web_static subdirectory
+            run('mv {}/web_static/* {}/'.format(web_static_location, web_static_location))
+
+            # Delete web_static subdirectory
+            run('rm -rf {}/web_static'.format(web_static_location))
+
             # Delete the archive
             run('rm -f {}'.format(remote_archive_location))
 
