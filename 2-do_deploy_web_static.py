@@ -53,6 +53,9 @@ def do_deploy(archive_path):
             web_static_location = "/data/web_static/releases/{}".format(
                 archive_name_without_extension)
 
+            # Make the directory we are going to extract to
+            run("mkdir -p {}".format(web_static_location))
+
             # Decompress/Uncompress the archive inside the tmp directory
             run('tar -xzvf {} -C {}'.format(remote_archive_location, web_static_location))
 
