@@ -44,7 +44,7 @@ def do_deploy(archive_path):
             archive_name_without_extension = archive_name.split('.')[0]
 
             # Construct archive location
-            remote_archive_location = "/tmp/".format(archive_name)
+            remote_archive_location = "/tmp/{}".format(archive_name)
 
             # Upload the archive to tmp
             put(archive_path, remote_archive_location)
