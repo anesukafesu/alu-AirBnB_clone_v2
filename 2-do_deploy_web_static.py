@@ -3,7 +3,7 @@
 """
 import os
 from datetime import datetime
-from fabric.api import local, run, put, env
+from fabric.api import *
 
 
 env.host = ['54.160.191.143', '3.91.59.203']
@@ -52,7 +52,6 @@ def do_deploy(archive_path):
             web_static_location = "/data/web_static/releases/{}".format(
                 archive_name_without_extension)
 
-
             # Decompress/Uncompress the archive inside the tmp directory
             run('tar -xcvf {} -C {}'.format(remote_archive_location, web_static_location))
 
@@ -69,5 +68,3 @@ def do_deploy(archive_path):
             return True
         except:
             return False
-
-        
