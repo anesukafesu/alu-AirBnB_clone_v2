@@ -20,7 +20,7 @@ def do_pack():
     archive_name = "web_static_{}.tgz".format(now_string)
 
     # Generating the archive using tar
-    local('tar -czvf {} ./web_static'.format(archive_name))
+    local('tar -czvf {} ./web_static/'.format(archive_name))
 
     # Creating the versions directory if it doesn't already exist
     local('mkdir versions -p')
