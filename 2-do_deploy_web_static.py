@@ -54,7 +54,7 @@ def do_deploy(archive_path):
                 archive_name_without_extension)
 
             # Decompress/Uncompress the archive inside the tmp directory
-            run('tar -xcvf {} -C {}/'.format(remote_archive_location, web_static_location))
+            run('tar -xzvf {} -C {}/'.format(remote_archive_location, web_static_location))
 
             # Delete the archive
             run('rm -f {}'.format(remote_archive_location))
