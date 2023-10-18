@@ -25,7 +25,7 @@ def hbnb():
 def c(text):
     """The C route
     """
-    return "C" + text.replace('_', ' ')
+    return "C " + text.replace('_', ' ')
 
 
 if __name__ == "__main__":
