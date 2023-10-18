@@ -36,5 +36,11 @@ def python(text):
     return "Python " + text.replace('_', ' ')
 
 
+@app.route('/number/n')
+def number(n):
+    if n.isdigit():
+        return n
+
+
 if __name__ == "__main__":
     app.run()
