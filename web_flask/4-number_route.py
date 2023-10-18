@@ -36,10 +36,9 @@ def python(text):
     return "Python " + text.replace('_', ' ')
 
 
-@app.route('/number/<n>')
+@app.route('/number/<int:n>')
 def number(n):
-    if n.isdigit():
-        return n
+    return str(n) + " is a number"
 
 
 if __name__ == "__main__":
