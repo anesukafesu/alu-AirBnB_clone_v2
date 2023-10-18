@@ -12,3 +12,7 @@ def index():
     """Index route
     """
     return 'Hello HBNB!'
+
+
+if __name__ == "__main__":
+    app.run()
