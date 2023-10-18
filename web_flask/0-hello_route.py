@@ -11,4 +11,4 @@ app.url_map.strict_slashes = False
 def index():
     """Index route
     """
-    return 'Hello HBNB'
+    return 'Hello HBNB!'
