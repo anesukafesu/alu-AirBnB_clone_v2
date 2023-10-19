@@ -18,6 +18,5 @@ class State(BaseModel, Base):
     else:
         @property
         def cities(self):
-            print(storage)
             return [city for city in storage.all(City).values()
                     if city.state_id == self.id]
