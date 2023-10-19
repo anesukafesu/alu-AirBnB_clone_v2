@@ -70,3 +70,6 @@ class FileStorage:
         else:
             key = self.__create_key(obj)
             del self.__objects[key]
+
+    def close(self):
+        self.reload()
