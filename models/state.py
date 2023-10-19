@@ -3,7 +3,6 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String
 from models.base_model import BaseModel, Base
 from models.city import City
-from models import storage
 from os import environ
 
 
@@ -18,5 +17,6 @@ class State(BaseModel, Base):
     else:
         @property
         def cities(self):
+            from models import storage
             return [city for city in storage.all(City).values()
                     if city.state_id == self.id]
