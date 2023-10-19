@@ -3,6 +3,7 @@
 from os import environ
 
 storage_type = environ['HBNB_TYPE_STORAGE']
+storage = None
 
 if storage_type == "db":
     from models.engine.db_storage import DBStorage
